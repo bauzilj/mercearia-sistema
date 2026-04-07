@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sistema de Mercearia - Cliente</title>
-  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
 <body>
   <div class="app">
@@ -36,36 +36,27 @@
       <section class="panel">
         <div class="section-head">
           <h3>Clientes</h3>
-          <button class="btn">Novo Cliente</button>
+          
         </div>
-        <div class="form-grid three-columns">
+        <div class="form-grid three-columns" id="form-cliente">
+         
           <label class="form-control">
             Nome
-            <input type="text" placeholder="Nome do cliente">
+            <input type="text" placeholder="Nome do cliente" id="nome-do-cliente">
           </label>
           <label class="form-control">
             E-mail
-            <input type="email" placeholder="cliente@email.com">
+            <input type="email" placeholder="cliente@email.com" id="email-do-cliente">
           </label>
-          <label class="form-control">
-            Telefone
-            <input type="tel" placeholder="(00) 00000-0000">
-          </label>
-          <label class="form-control">
-            CPF
-            <input type="text" placeholder="000.000.000-00">
-          </label>
-          <label class="form-control">
-            Cidade
-            <input type="text" placeholder="Cidade">
-          </label>
+      
           <label class="form-control">
             Status
-            <select>
+            <select id="status-cliente">
               <option>Ativo</option>
               <option>Bloqueado</option>
             </select>
           </label>
+           <button class="btn">Salvar Cliente</button>
         </div>
         <div class="table-wrapper">
           <table>
@@ -73,45 +64,32 @@
               <tr>
                 <th>ID</th>
                 <th>Cliente</th>
-                <th>Telefone</th>
-                <th>Cidade</th>
+                <th>Email</th>
                 <th>Status</th>
                 <th>Ações</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody  id="tbody-clientes">
               <tr>
                 <td>102</td>
                 <td>Maria Souza</td>
-                <td>(11) 99999-1234</td>
-                <td>São Paulo</td>
+                <td>mariasouza@exemple.com</td>
                 <td><span class="badge success">Ativo</span></td>
                 <td>
                   <div class="table-actions">
-                    <button class="btn-action edit">Editar</button>
+                    <button onclick="editar(this)" class="btn-action edit">Editar</button>
                     <button class="btn-action delete">Excluir</button>
                   </div>
                 </td>
               </tr>
-              <tr>
-                <td>103</td>
-                <td>João Mendes</td>
-                <td>(21) 98888-4567</td>
-                <td>Rio de Janeiro</td>
-                <td><span class="badge neutral">Bloqueado</span></td>
-                <td>
-                  <div class="table-actions">
-                    <button class="btn-action edit">Editar</button>
-                    <button class="btn-action delete">Excluir</button>
-                  </div>
-                </td>
-              </tr>
+              <!-- -->
             </tbody>
           </table>
         </div>
       </section>
     </main>
   </div>
-  <script src="./js/cliente.js"></script>
+  <script src="./assets/js/cliente.js"></script>
+  <script src="./assets/js/form-cliente.js"></script>
 </body>
 </html>
