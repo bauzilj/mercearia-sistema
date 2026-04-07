@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Mercearia - Cliente</title>
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <h1>Mercearia Pro</h1>
+        <p>Sistema Completo</p>
+      </div>
+      <nav class="menu">
+        <a href="index.html">Visão Geral</a>
+        <a href="categoria.html">Categoria</a>
+        <a href="cliente.html" class="active">Cliente</a>
+        <a href="estoque.html">Estoque</a>
+        <a href="fornecedor.html">Fornecedor</a>
+        <a href="itens.html">Itens</a>
+        <a href="pedido.html">Pedido</a>
+      </nav>
+      <div class="sidebar-footer">
+        <small>Gestão da Mercearia</small>
+      </div>
+    </aside>
+    <main class="content">
+      <header class="topbar">
+        <div>
+          <h2>Mercearia Cliente</h2>
+          <p>Cadastro e acompanhamento de clientes</p>
+        </div>
+      </header>
+      <section class="panel">
+        <div class="section-head">
+          <h3>Clientes</h3>
+          <button class="btn">Novo Cliente</button>
+        </div>
+        <div class="form-grid three-columns">
+          <label class="form-control">
+            Nome
+            <input type="text" placeholder="Nome do cliente">
+          </label>
+          <label class="form-control">
+            E-mail
+            <input type="email" placeholder="cliente@email.com">
+          </label>
+          <label class="form-control">
+            Telefone
+            <input type="tel" placeholder="(00) 00000-0000">
+          </label>
+          <label class="form-control">
+            CPF
+            <input type="text" placeholder="000.000.000-00">
+          </label>
+          <label class="form-control">
+            Cidade
+            <input type="text" placeholder="Cidade">
+          </label>
+          <label class="form-control">
+            Status
+            <select>
+              <option>Ativo</option>
+              <option>Bloqueado</option>
+            </select>
+          </label>
+        </div>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Cliente</th>
+                <th>Telefone</th>
+                <th>Cidade</th>
+                <th>Status</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>102</td>
+                <td>Maria Souza</td>
+                <td>(11) 99999-1234</td>
+                <td>São Paulo</td>
+                <td><span class="badge success">Ativo</span></td>
+                <td>
+                  <div class="table-actions">
+                    <button class="btn-action edit">Editar</button>
+                    <button class="btn-action delete">Excluir</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>103</td>
+                <td>João Mendes</td>
+                <td>(21) 98888-4567</td>
+                <td>Rio de Janeiro</td>
+                <td><span class="badge neutral">Bloqueado</span></td>
+                <td>
+                  <div class="table-actions">
+                    <button class="btn-action edit">Editar</button>
+                    <button class="btn-action delete">Excluir</button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

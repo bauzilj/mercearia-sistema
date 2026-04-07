@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Mercearia - Estoque</title>
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <h1>Mercearia Pro</h1>
+        <p>Sistema Completo</p>
+      </div>
+      <nav class="menu">
+        <a href="index.html">Visão Geral</a>
+        <a href="categoria.html">Categoria</a>
+        <a href="cliente.html">Cliente</a>
+        <a href="estoque.html" class="active">Estoque</a>
+        <a href="fornecedor.html">Fornecedor</a>
+        <a href="itens.html">Itens</a>
+        <a href="pedido.html">Pedido</a>
+      </nav>
+      <div class="sidebar-footer">
+        <small>Gestão da Mercearia</small>
+      </div>
+    </aside>
+    <main class="content">
+      <header class="topbar">
+        <div>
+          <h2>Mercearia Estoque</h2>
+          <p>Controle de entradas, saídas e níveis de produtos</p>
+        </div>
+      </header>
+      <section class="panel">
+        <div class="section-head">
+          <h3>Estoque Atual</h3>
+          <button class="btn">Entrada de Estoque</button>
+        </div>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Item</th>
+                <th>Lote</th>
+                <th>Quantidade</th>
+                <th>Mínimo</th>
+                <th>Validade</th>
+                <th>Situação</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Arroz 5kg</td>
+                <td>L-2201</td>
+                <td>80</td>
+                <td>20</td>
+                <td>12/2026</td>
+                <td><span class="badge success">Normal</span></td>
+                <td>
+                  <div class="table-actions">
+                    <button class="btn-action edit">Editar</button>
+                    <button class="btn-action delete">Excluir</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>Leite Integral 1L</td>
+                <td>L-3350</td>
+                <td>12</td>
+                <td>30</td>
+                <td>08/2026</td>
+                <td><span class="badge danger">Baixo</span></td>
+                <td>
+                  <div class="table-actions">
+                    <button class="btn-action edit">Editar</button>
+                    <button class="btn-action delete">Excluir</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>Sabão em Pó 1kg</td>
+                <td>L-5510</td>
+                <td>45</td>
+                <td>15</td>
+                <td>01/2028</td>
+                <td><span class="badge success">Normal</span></td>
+                <td>
+                  <div class="table-actions">
+                    <button class="btn-action edit">Editar</button>
+                    <button class="btn-action delete">Excluir</button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

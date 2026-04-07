@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Mercearia - Categoria</title>
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <h1>Mercearia Pro</h1>
+        <p>Sistema Completo</p>
+      </div>
+      <nav class="menu">
+        <a href="index.html">Visão Geral</a>
+        <a href="categoria.html" class="active">Categoria</a>
+        <a href="cliente.html">Cliente</a>
+        <a href="estoque.html">Estoque</a>
+        <a href="fornecedor.html">Fornecedor</a>
+        <a href="itens.html">Itens</a>
+        <a href="pedido.html">Pedido</a>
+      </nav>
+      <div class="sidebar-footer">
+        <small>Gestão da Mercearia</small>
+      </div>
+    </aside>
+    <main class="content">
+      <header class="topbar">
+        <div>
+          <h2>Mercearia Categoria</h2>
+          <p>Cadastro e gestão de categorias de produtos</p>
+        </div>
+      </header>
+      <section class="panel">
+        <div class="section-head">
+          <h3>Categorias</h3>
+          <button class="btn">Nova Categoria</button>
+        </div>
+        <div class="form-grid">
+          <label class="form-control">
+            Nome da Categoria
+            <input type="text" placeholder="Ex.: Bebidas">
+          </label>
+          <label class="form-control">
+            Código
+            <input type="text" placeholder="CAT-001">
+          </label>
+          <label class="form-control">
+            Status
+            <select>
+              <option>Ativa</option>
+              <option>Inativa</option>
+            </select>
+          </label>
+        </div>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Categoria</th>
+                <th>Código</th>
+                <th>Status</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Bebidas</td>
+                <td>CAT-001</td>
+                <td><span class="badge success">Ativa</span></td>
+                <td>
+                  <div class="table-actions">
+                    <button class="btn-action edit">Editar</button>
+                    <button class="btn-action delete">Excluir</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Hortifruti</td>
+                <td>CAT-002</td>
+                <td><span class="badge success">Ativa</span></td>
+                <td>
+                  <div class="table-actions">
+                    <button class="btn-action edit">Editar</button>
+                    <button class="btn-action delete">Excluir</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Limpeza</td>
+                <td>CAT-003</td>
+                <td><span class="badge warning">Inativa</span></td>
+                <td>
+                  <div class="table-actions">
+                    <button class="btn-action edit">Editar</button>
+                    <button class="btn-action delete">Excluir</button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

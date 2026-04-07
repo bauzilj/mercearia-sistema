@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Mercearia - Pedido</title>
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <h1>Mercearia Pro</h1>
+        <p>Sistema Completo</p>
+      </div>
+      <nav class="menu">
+        <a href="index.html">Visão Geral</a>
+        <a href="categoria.html">Categoria</a>
+        <a href="cliente.html">Cliente</a>
+        <a href="estoque.html">Estoque</a>
+        <a href="fornecedor.html">Fornecedor</a>
+        <a href="itens.html">Itens</a>
+        <a href="pedido.html" class="active">Pedido</a>
+      </nav>
+      <div class="sidebar-footer">
+        <small>Gestão da Mercearia</small>
+      </div>
+    </aside>
+    <main class="content">
+      <header class="topbar">
+        <div>
+          <h2>Mercearia Pedido</h2>
+          <p>Acompanhamento dos pedidos da mercearia</p>
+        </div>
+      </header>
+      <section class="panel">
+        <div class="section-head">
+          <h3>Pedido #PD-2026-108</h3>
+          <button class="btn">Novo Pedido</button>
+        </div>
+        <div class="order-summary">
+          <article>
+            <h4>Cliente</h4>
+            <p>Maria Souza</p>
+          </article>
+          <article>
+            <h4>Data</h4>
+            <p>07/04/2026</p>
+          </article>
+          <article>
+            <h4>Total</h4>
+            <p>R$ 265,80</p>
+          </article>
+          <article>
+            <h4>Status</h4>
+            <p><span class="badge success">Concluído</span></p>
+          </article>
+        </div>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Item</th>
+                <th>Qtd</th>
+                <th>Preço Unit.</th>
+                <th>Subtotal</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Arroz 5kg</td>
+                <td>2</td>
+                <td>R$ 28,90</td>
+                <td>R$ 57,80</td>
+                <td>
+                  <div class="table-actions">
+                    <button class="btn-action edit">Editar</button>
+                    <button class="btn-action delete">Excluir</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>Leite Integral 1L</td>
+                <td>12</td>
+                <td>R$ 5,50</td>
+                <td>R$ 66,00</td>
+                <td>
+                  <div class="table-actions">
+                    <button class="btn-action edit">Editar</button>
+                    <button class="btn-action delete">Excluir</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>Café Torrado 500g</td>
+                <td>4</td>
+                <td>R$ 14,90</td>
+                <td>R$ 59,60</td>
+                <td>
+                  <div class="table-actions">
+                    <button class="btn-action edit">Editar</button>
+                    <button class="btn-action delete">Excluir</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>Sabão em Pó 1kg</td>
+                <td>6</td>
+                <td>R$ 13,40</td>
+                <td>R$ 80,40</td>
+                <td>
+                  <div class="table-actions">
+                    <button class="btn-action edit">Editar</button>
+                    <button class="btn-action delete">Excluir</button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

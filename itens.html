@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Mercearia - Itens</title>
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <h1>Mercearia Pro</h1>
+        <p>Sistema Completo</p>
+      </div>
+      <nav class="menu">
+        <a href="index.html">Visão Geral</a>
+        <a href="categoria.html">Categoria</a>
+        <a href="cliente.html">Cliente</a>
+        <a href="estoque.html">Estoque</a>
+        <a href="fornecedor.html">Fornecedor</a>
+        <a href="itens.html" class="active">Itens</a>
+        <a href="pedido.html">Pedido</a>
+      </nav>
+      <div class="sidebar-footer">
+        <small>Gestão da Mercearia</small>
+      </div>
+    </aside>
+    <main class="content">
+      <header class="topbar">
+        <div>
+          <h2>Mercearia Itens</h2>
+          <p>Cadastro de produtos comercializados</p>
+        </div>
+      </header>
+      <section class="panel">
+        <div class="section-head">
+          <h3>Itens</h3>
+          <button class="btn">Novo Item</button>
+        </div>
+        <div class="form-grid three-columns">
+          <label class="form-control">
+            Nome do Item
+            <input type="text" placeholder="Ex.: Café 500g">
+          </label>
+          <label class="form-control">
+            Categoria
+            <select>
+              <option>Bebidas</option>
+              <option>Alimentos</option>
+              <option>Limpeza</option>
+            </select>
+          </label>
+          <label class="form-control">
+            Preço de Venda
+            <input type="text" placeholder="R$ 0,00">
+          </label>
+          <label class="form-control">
+            Código de Barras
+            <input type="text" placeholder="7890000000000">
+          </label>
+          <label class="form-control">
+            Unidade
+            <select>
+              <option>Unidade</option>
+              <option>Kg</option>
+              <option>Litro</option>
+            </select>
+          </label>
+          <label class="form-control">
+            Fornecedor
+            <select>
+              <option>Distribuidora Sol Nascente</option>
+              <option>Atacado Verde Vale</option>
+            </select>
+          </label>
+        </div>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>SKU</th>
+                <th>Item</th>
+                <th>Categoria</th>
+                <th>Preço</th>
+                <th>Fornecedor</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>IT-001</td>
+                <td>Café Torrado 500g</td>
+                <td>Alimentos</td>
+                <td>R$ 14,90</td>
+                <td>Distribuidora Sol Nascente</td>
+                <td>
+                  <div class="table-actions">
+                    <button class="btn-action edit">Editar</button>
+                    <button class="btn-action delete">Excluir</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>IT-014</td>
+                <td>Refrigerante Cola 2L</td>
+                <td>Bebidas</td>
+                <td>R$ 9,50</td>
+                <td>Atacado Verde Vale</td>
+                <td>
+                  <div class="table-actions">
+                    <button class="btn-action edit">Editar</button>
+                    <button class="btn-action delete">Excluir</button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
