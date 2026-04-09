@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sistema de Mercearia - Cliente</title>
   <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
+
 <body>
   <div class="app">
     <aside class="sidebar">
@@ -36,10 +38,10 @@
       <section class="panel">
         <div class="section-head">
           <h3>Clientes</h3>
-          
+
         </div>
         <div class="form-grid three-columns" id="form-cliente">
-         
+
           <label class="form-control">
             Nome
             <input type="text" placeholder="Nome do cliente" id="nome-do-cliente">
@@ -48,15 +50,7 @@
             E-mail
             <input type="email" placeholder="cliente@email.com" id="email-do-cliente">
           </label>
-      
-          <label class="form-control">
-            Status
-            <select id="status-cliente">
-              <option>Ativo</option>
-              <option>Bloqueado</option>
-            </select>
-          </label>
-           <button class="btn">Salvar Cliente</button>
+          <button class="btn">Salvar Cliente</button>
         </div>
         <div class="table-wrapper">
           <table>
@@ -65,16 +59,14 @@
                 <th>ID</th>
                 <th>Cliente</th>
                 <th>Email</th>
-                <th>Status</th>
                 <th>Ações</th>
               </tr>
             </thead>
-            <tbody  id="tbody-clientes">
+            <tbody id="tbody-clientes">
               <tr>
                 <td>102</td>
                 <td>Maria Souza</td>
                 <td>mariasouza@exemple.com</td>
-                <td><span class="badge success">Ativo</span></td>
                 <td>
                   <div class="table-actions">
                     <button onclick="editar(this)" class="btn-action edit">Editar</button>
@@ -89,7 +81,9 @@
       </section>
     </main>
   </div>
+
   <script src="./assets/js/cliente.js"></script>
   <script src="./assets/js/form-cliente.js"></script>
 </body>
+
 </html>
