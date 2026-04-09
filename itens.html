@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sistema de Mercearia - Itens</title>
   <link rel="stylesheet" href="./assets/css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
   <div class="app">
@@ -29,96 +30,51 @@
     <main class="content">
       <header class="topbar">
         <div>
-          <h2>Mercearia Itens teste</h2>
-          <p>Cadastro de produtos comercializados</p>
+          <h2>Mercearia Itens</h2>
+          <p>Cadastro e gestão de itens da mercearia</p>
         </div>
       </header>
       <section class="panel">
         <div class="section-head">
           <h3>Itens</h3>
-          <button class="btn">Novo Item</button>
+          <button class="btn" id="btn-salvar">Salvar Item</button>
         </div>
-        <div class="form-grid three-columns">
+        <form class="form-grid three-columns" id="form-item">
           <label class="form-control">
             Nome do Item
-            <input type="text" placeholder="Ex.: Café 500g">
+            <input type="text" id="input-nome" placeholder="Ex.: Arroz 5kg">
+          </label>
+          <label class="form-control">
+            Preço
+            <input type="number" step="0.01" id="input-preco" placeholder="Ex.: 25.90">
           </label>
           <label class="form-control">
             Categoria
-            <select>
-              <option>Bebidas</option>
-              <option>Alimentos</option>
-              <option>Limpeza</option>
+            <select id="select-categoria">
+              <option value="">Selecione uma categoria</option>
+              <!-- Categorias serão carregadas dinamicamente -->
             </select>
           </label>
-          <label class="form-control">
-            Preço de Venda
-            <input type="text" placeholder="R$ 0,00">
-          </label>
-          <label class="form-control">
-            Código de Barras
-            <input type="text" placeholder="7890000000000">
-          </label>
-          <label class="form-control">
-            Unidade
-            <select>
-              <option>Unidade</option>
-              <option>Kg</option>
-              <option>Litro</option>
-            </select>
-          </label>
-          <label class="form-control">
-            Fornecedor
-            <select>
-              <option>Distribuidora Sol Nascente</option>
-              <option>Atacado Verde Vale</option>
-            </select>
-          </label>
-        </div>
+        </form>
         <div class="table-wrapper">
           <table>
             <thead>
               <tr>
-                <th>SKU</th>
+                <th class="cell-id">ID</th>
                 <th>Item</th>
-                <th>Categoria</th>
                 <th>Preço</th>
-                <th>Fornecedor</th>
-                <th>Ações</th>
+                <th>Categoria</th>
+                <th class="cell-actions">Ações</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td>IT-001</td>
-                <td>Café Torrado 500g</td>
-                <td>Alimentos</td>
-                <td>R$ 14,90</td>
-                <td>Distribuidora Sol Nascente</td>
-                <td>
-                  <div class="table-actions">
-                    <button class="btn-action edit">Editar</button>
-                    <button class="btn-action delete">Excluir</button>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>IT-014</td>
-                <td>Refrigerante Cola 2L</td>
-                <td>Bebidas</td>
-                <td>R$ 9,50</td>
-                <td>Atacado Verde Vale</td>
-                <td>
-                  <div class="table-actions">
-                    <button class="btn-action edit">Editar</button>
-                    <button class="btn-action delete">Excluir</button>
-                  </div>
-                </td>
-              </tr>
+            <tbody id="tbody-itens">
+              <!-- Os itens serão carregados aqui -->
             </tbody>
           </table>
         </div>
       </section>
     </main>
   </div>
+  <script src="./assets/js/itens.js"></script>
 </body>
 </html>
