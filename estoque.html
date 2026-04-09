@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sistema de Mercearia - Estoque</title>
-  <link rel="stylesheet" href="./assets/css/styles.css">
+  <link rel="stylesheet" href="./assets/css/styles.css" />
 </head>
 <body>
   <div class="app">
@@ -36,69 +36,41 @@
       <section class="panel">
         <div class="section-head">
           <h3>Estoque Atual</h3>
-          <button class="btn">Entrada de Estoque</button>
+          <button class="btn" id="btn-estoque" type="button">Novo Item</button>
         </div>
+        <form class="form-grid three-columns" id="form-estoque">
+          <label class="form-control">
+            Item
+            <input type="text" id="nome-item" placeholder="Nome do produto" />
+          </label>
+          <label class="form-control">
+            Quantidade
+            <input type="number" id="quantidade-item" min="1" />
+          </label>
+          <label class="form-control">
+            Fornecedor
+            <select id="fornecedor-id" required>
+              <option value="">Selecione um fornecedor</option>
+            </select>
+          </label>
+        </form>
         <div class="table-wrapper">
           <table>
             <thead>
               <tr>
                 <th>Item</th>
-                <th>Lote</th>
                 <th>Quantidade</th>
-                <th>Mínimo</th>
-                <th>Validade</th>
-                <th>Situação</th>
+                <th>ID do Fornecedor</th>
                 <th>Ações</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td>Arroz 5kg</td>
-                <td>L-2201</td>
-                <td>80</td>
-                <td>20</td>
-                <td>12/2026</td>
-                <td><span class="badge success">Normal</span></td>
-                <td>
-                  <div class="table-actions">
-                    <button class="btn-action edit">Editar</button>
-                    <button class="btn-action delete">Excluir</button>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>Leite Integral 1L</td>
-                <td>L-3350</td>
-                <td>12</td>
-                <td>30</td>
-                <td>08/2026</td>
-                <td><span class="badge danger">Baixo</span></td>
-                <td>
-                  <div class="table-actions">
-                    <button class="btn-action edit">Editar</button>
-                    <button class="btn-action delete">Excluir</button>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>Sabão em Pó 1kg</td>
-                <td>L-5510</td>
-                <td>45</td>
-                <td>15</td>
-                <td>01/2028</td>
-                <td><span class="badge success">Normal</span></td>
-                <td>
-                  <div class="table-actions">
-                    <button class="btn-action edit">Editar</button>
-                    <button class="btn-action delete">Excluir</button>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
+            <tbody id="tbody-estoque"></tbody>
           </table>
         </div>
       </section>
     </main>
   </div>
+  <script src="./assets/js/estoque.js"></script>
+  <script src="./assets/js/form-estoque.js"></script>
 </body>
 </html>

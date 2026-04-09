@@ -38,64 +38,42 @@
           <h3>Fornecedores</h3>
           <button class="btn">Novo Fornecedor</button>
         </div>
-        <div class="form-grid">
+        <form class="form-grid three-columns" id="form-fornecedor">       
           <label class="form-control">
             Empresa
-            <input type="text" placeholder="Nome da empresa">
+            <input 
+              type="text" 
+              placeholder="Nome do fornecedor" 
+              id="nome-do-fornecedor"
+            >
           </label>
           <label class="form-control">
-            CNPJ
-            <input type="text" placeholder="00.000.000/0000-00">
+            Telefone
+            <input 
+              type="text" 
+              placeholder="Número de telefone" 
+              id="telefone-do-fornecedor"
+            >
           </label>
-          <label class="form-control">
-            Contato
-            <input type="text" placeholder="Responsável">
-          </label>
-        </div>
+        </form>
         <div class="table-wrapper">
           <table>
             <thead>
               <tr>
                 <th>ID</th>
-                <th>Fornecedor</th>
-                <th>CNPJ</th>
-                <th>Contato</th>
-                <th>Cidade</th>
+                <th>Nome</th>
+                <th>Telefone</th>
                 <th>Ações</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td>F-11</td>
-                <td>Distribuidora Sol Nascente</td>
-                <td>10.111.222/0001-80</td>
-                <td>Carlos Lima</td>
-                <td>Campinas</td>
-                <td>
-                  <div class="table-actions">
-                    <button class="btn-action edit">Editar</button>
-                    <button class="btn-action delete">Excluir</button>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>F-25</td>
-                <td>Atacado Verde Vale</td>
-                <td>23.456.789/0001-55</td>
-                <td>Ana Paula</td>
-                <td>Belo Horizonte</td>
-                <td>
-                  <div class="table-actions">
-                    <button class="btn-action edit">Editar</button>
-                    <button class="btn-action delete">Excluir</button>
-                  </div>
-                </td>
-              </tr>
+            <tbody id="tbody-fornecedores">
             </tbody>
           </table>
         </div>
       </section>
     </main>
   </div>
+  <script src="./assets/js/fornecedor.js"></script>
+  <script src="./assets/js/form-fornecedor.js"></script>
 </body>
 </html>
