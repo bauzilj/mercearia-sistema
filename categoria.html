@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sistema de Mercearia - Categoria</title>
   <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
+
 <body>
   <div class="app">
     <aside class="sidebar">
@@ -36,78 +38,36 @@
       <section class="panel">
         <div class="section-head">
           <h3>Categorias</h3>
-          <button class="btn">Nova Categoria</button>
+          <button class="btn" id="btn-salvar">Salvar Categoria</button>
         </div>
-        <div class="form-grid">
+        <form class="form-grid two-columns" id="form-categoria">
           <label class="form-control">
             Nome da Categoria
-            <input type="text" placeholder="Ex.: Bebidas">
+            <input type="text" id="input-nome" placeholder="Ex.: Bebidas">
           </label>
           <label class="form-control">
-            Código
-            <input type="text" placeholder="CAT-001">
+            Descrição
+            <input type="text" id="input-descricao" placeholder="Ex.: Refrigerantes, sucos e águas">
           </label>
-          <label class="form-control">
-            Status
-            <select>
-              <option>Ativa</option>
-              <option>Inativa</option>
-            </select>
-          </label>
-        </div>
+        </form>
         <div class="table-wrapper">
           <table>
             <thead>
               <tr>
                 <th>ID</th>
                 <th>Categoria</th>
-                <th>Código</th>
-                <th>Status</th>
+                <th>Descrição</th>
                 <th>Ações</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td>1</td>
-                <td>Bebidas</td>
-                <td>CAT-001</td>
-                <td><span class="badge success">Ativa</span></td>
-                <td>
-                  <div class="table-actions">
-                    <button class="btn-action edit">Editar</button>
-                    <button class="btn-action delete">Excluir</button>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>Hortifruti</td>
-                <td>CAT-002</td>
-                <td><span class="badge success">Ativa</span></td>
-                <td>
-                  <div class="table-actions">
-                    <button class="btn-action edit">Editar</button>
-                    <button class="btn-action delete">Excluir</button>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Limpeza</td>
-                <td>CAT-003</td>
-                <td><span class="badge warning">Inativa</span></td>
-                <td>
-                  <div class="table-actions">
-                    <button class="btn-action edit">Editar</button>
-                    <button class="btn-action delete">Excluir</button>
-                  </div>
-                </td>
-              </tr>
+            <tbody id="tbody-categorias">
             </tbody>
           </table>
         </div>
       </section>
     </main>
   </div>
+  <script src="./assets/js/categoria.js"></script>
 </body>
+
 </html>
