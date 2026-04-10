@@ -35,7 +35,7 @@ function salvar(event) {
         return response.json();
     })
     .then(() => {
-        window.location.href = "/cliente.html";
+        window.location.href = "./cliente.html";
     })
     .catch(erro => {
         console.error(erro);
