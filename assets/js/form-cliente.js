@@ -1,7 +1,7 @@
-
-
 let formClientes = document.getElementById("form-cliente");
-formClientes.addEventListener("click", salvar);
+
+
+formClientes.addEventListener("submit", salvar);
 
 function salvar(event) {
     event.preventDefault();
@@ -15,11 +15,9 @@ function salvar(event) {
     }
 
     let payload = {
-        "nome": nomeCliente,
-        "email": emailCliente
+        nome: nomeCliente,
+        email: emailCliente
     };
-
-    
 
     fetch(API_CLIENTES_BASE_URL, {
         method: "POST",
@@ -28,18 +26,22 @@ function salvar(event) {
         },
         body: JSON.stringify(payload)
     })
-    .then(response => {
+    .then(async response => {
+        const data = await response.text();
+        console.log("Resposta da API:", data); 
+
         if (!response.ok) {
             throw new Error("Erro ao cadastrar cliente");
         }
-        return response.json();
+
+        return data;
     })
     .then(() => {
-        window.location.href = "./cliente.html";
+        formClientes.reset();
+        carregarClientes();
     })
     .catch(erro => {
         console.error(erro);
         alert("Ocorreu um erro ao cadastrar o cliente");
     });
 }
-

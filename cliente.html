@@ -15,6 +15,7 @@
         <h1>Mercearia Pro</h1>
         <p>Sistema Completo</p>
       </div>
+
       <nav class="menu">
         <a href="index.html">Visão Geral</a>
         <a href="categoria.html">Categoria</a>
@@ -24,10 +25,12 @@
         <a href="itens.html">Itens</a>
         <a href="pedido.html">Pedido</a>
       </nav>
+
       <div class="sidebar-footer">
         <small>Gestão da Mercearia</small>
       </div>
     </aside>
+
     <main class="content">
       <header class="topbar">
         <div>
@@ -35,23 +38,27 @@
           <p>Cadastro e acompanhamento de clientes</p>
         </div>
       </header>
+
       <section class="panel">
         <div class="section-head">
           <h3>Clientes</h3>
-
         </div>
-        <div class="form-grid three-columns" id="form-cliente">
+        <form class="form-grid three-columns" id="form-cliente">
 
           <label class="form-control">
             Nome
             <input type="text" placeholder="Nome do cliente" id="nome-do-cliente">
           </label>
+
           <label class="form-control">
             E-mail
             <input type="email" placeholder="cliente@email.com" id="email-do-cliente">
           </label>
-          <button class="btn">Salvar Cliente</button>
-        </div>
+
+          <button type="submit" class="btn">Salvar Cliente</button>
+
+        </form>
+
         <div class="table-wrapper">
           <table>
             <thead>
@@ -62,6 +69,7 @@
                 <th>Ações</th>
               </tr>
             </thead>
+
             <tbody id="tbody-clientes">
               <tr>
                 <td>102</td>
@@ -69,21 +77,24 @@
                 <td>mariasouza@exemple.com</td>
                 <td>
                   <div class="table-actions">
-                    <button onclick="editar(this)" class="btn-action edit">Editar</button>
+                    <button class="btn-action edit">Editar</button>
                     <button class="btn-action delete">Excluir</button>
                   </div>
                 </td>
               </tr>
-              <!-- -->
             </tbody>
+
           </table>
         </div>
+
       </section>
     </main>
   </div>
 
+
   <script src="./assets/js/cliente.js"></script>
   <script src="./assets/js/form-cliente.js"></script>
+
 </body>
 
 </html>

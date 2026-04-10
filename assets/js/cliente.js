@@ -1,32 +1,36 @@
-const API_CLIENTES_BASE_URL = "https://api.franciscosensaulas.com/api/v1/mercearia/clientes";
-
+const API_CLIENTES_BASE_URL =
+  "https://api.franciscosensaulas.com/api/v1/mercearia/clientes";
 
 const tbodyClientes = document.getElementById("tbody-clientes");
 
-
 function carregarClientes() {
-    fetch(API_CLIENTES_BASE_URL)
-        .then((response) => response.json())
-        .then((clientes) => {
-            tbodyClientes.innerHTML = "";
+  fetch(API_CLIENTES_BASE_URL)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Erro ao carregar clientes");
+      }
+      return response.json();
+    })
+    .then((clientes) => {
+      tbodyClientes.innerHTML = "";
 
-            for (let i = 0; i < clientes.length; i++) {
-                const cliente = clientes[i];
-                criarLinha(cliente);
-            }
-        })
-        .catch(error => {
-            console.log("Erro ao carregar clientes:", error);
-        });
+      for (let i = 0; i < clientes.length; i++) {
+        const cliente = clientes[i];
+        criarLinha(cliente);
+      }
+    })
+    .catch((error) => {
+      console.log("Erro ao carregar clientes:", error);
+    });
 }
 
 function criarLinha(cliente) {
-    const tr = document.createElement("tr");
+  const tr = document.createElement("tr");
 
-    tr.innerHTML = `
+  tr.innerHTML = `
         <td>${cliente.id}</td>
-        <td>${cliente.nome}</td>
-        <td>${cliente.email}</td>
+        <td class="nome">${cliente.nome}</td>
+        <td class="email">${cliente.email}</td>
         <td>
           <div class="table-actions">
             <button class="btn-action edit">Editar</button>
@@ -35,62 +39,82 @@ function criarLinha(cliente) {
         </td>
     `;
 
-    // Pegando os botões
-    const btnEditar = tr.querySelector(".edit");
-    const btnExcluir = tr.querySelector(".delete");
+  const btnEditar = tr.querySelector(".edit");
+  const btnExcluir = tr.querySelector(".delete");
 
-    // Evento de editar
-    btnEditar.addEventListener("click", () => {
-        editarCliente(cliente);
-    });
+  btnEditar.addEventListener("click", () => {
+    ativarEdicao(tr, cliente);
+  });
 
-    // Evento de excluir
-    btnExcluir.addEventListener("click", () => {
-        excluirCliente(cliente.id);
-    });
+  btnExcluir.addEventListener("click", () => {
+    excluirCliente(cliente.id);
+  });
 
-    tbodyClientes.appendChild(tr);
+  tbodyClientes.appendChild(tr);
 }
 
-carregarClientes()
+carregarClientes();
 
 function excluirCliente(id) {
-    if (!confirm("Tem certeza que deseja excluir este cliente?")) return;
+  if (!confirm("Tem certeza que deseja excluir este cliente?")) return;
 
-    fetch(`${API_CLIENTES_BASE_URL}/${id}`, {
-        method: "DELETE"
+  fetch(`${API_CLIENTES_BASE_URL}/${id}`, {
+    method: "DELETE",
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Erro ao excluir cliente");
+      }
+      alert("Cliente excluído com sucesso!");
+      carregarClientes();
     })
-        .then(() => {
-            alert("Cliente excluído com sucesso!");
-            carregarClientes(); 
-        })
-        .catch(error => {
-            console.error("Erro ao excluir:", error);
-        });
+    .catch((error) => {
+      console.error("Erro ao excluir:", error);
+    });
 }
 
-function editarCliente(cliente) {
-    const novoNome = prompt("Novo nome:", cliente.nome);
-    const novoEmail = prompt("Novo email:", cliente.email);
 
-    if (!novoNome || !novoEmail) return;
+function ativarEdicao(tr, cliente) {
+  const nomeTd = tr.querySelector(".nome");
+  const emailTd = tr.querySelector(".email");
+  const btnEditar = tr.querySelector(".edit");
+
+  nomeTd.innerHTML = `<input type="text" class="edit-nome" value="${cliente.nome}">`;
+  emailTd.innerHTML = `<input type="email" class="edit-email" value="${cliente.email}">`;
+
+  btnEditar.textContent = "Salvar";
+
+  btnEditar.onclick = () => {
+    const novoNome = tr.querySelector(".edit-nome").value;
+    const novoEmail = tr.querySelector(".edit-email").value;
+
+    if (!novoNome || !novoEmail) {
+      alert("Preencha todos os campos!");
+      return;
+    }
 
     fetch(`${API_CLIENTES_BASE_URL}/${cliente.id}`, {
-        method: "PUT",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            nome: novoNome,
-            email: novoEmail
-        })
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        nome: novoNome,
+        email: novoEmail,
+      }),
     })
-        .then(() => {
-            alert("Cliente atualizado!");
-            carregarClientes();
-        })
-        .catch(error => {
-            console.error("Erro ao editar:", error);
-        });
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Erro ao atualizar cliente");
+        }
+        return response.json();
+      })
+      .then(() => {
+        alert("Cliente atualizado!");
+        carregarClientes();
+      })
+      .catch((error) => {
+        console.error("Erro ao editar:", error);
+      });
+  };
 }
-
