@@ -14,7 +14,7 @@ async function fetchAPI(url, options = {}) {
     throw new Error(`Erro HTTP: ${response.status}`);
   }
 
-  // DELETE geralmente não retorna JSON
+  
   if (response.status === 204) return null;
 
   return response.json();
